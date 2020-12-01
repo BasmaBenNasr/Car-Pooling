@@ -28,6 +28,7 @@ import {DriverDetailComponent} from './components/passenger/driver-detail/driver
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TestComponent } from './components/test/test.component';
 
 
 
@@ -50,6 +51,7 @@ import { FooterComponent } from './components/footer/footer.component';
     DriverDetailComponent,
     AboutUsComponent,
     FooterComponent,
+    TestComponent,
    
   ],
   imports: [

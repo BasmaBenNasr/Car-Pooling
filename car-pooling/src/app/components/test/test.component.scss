@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+// html,body{
+//   display: grid;
+//   height: 100%;
+//   place-items: center;
+//   background: #000;
+//   overflow: hidden;
+// }
+.card{
+    margin-top: -170px;
+    margin-left: 20px;
+    
+}
+
+button {
+    position: relative;
+    height: 80px;
+    width: 300px;
+    margin: 0 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.5s;
+    margin-top: 140px;
+    margin-left: 1100px;
+}
+button:first-child{
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+button:last-child{
+  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+  background-size: 400%;
+}
+button:first-child:before,
+button:last-child:before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+button:first-child:before,
+button:last-child:before{
+  opacity: 1;
+  z-index: -1;
+}
+button{
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+    width: 580px;
+    text-align: justify;
+}
+#neon {
+    color: rgb(231, 143, 84);
+    font-family: cursive;
+    text-shadow:
+      0 0 5px rgb(167, 78, 26),
+      0 0 10px rgb(185, 74, 9),
+      0 0 20px rgb(251, 255, 0),
+      0 0 40px rgb(251, 255, 0),
+      0 0 80px rgb(251, 255, 0),
+      0 0 90px rgb(251, 255, 0),
+      0 0 100px rgb(251, 255, 0),
+      0 0 150px rgb(251, 255, 0);
+  }
+  #ne{
+    color: rgba(255, 255, 255, 0.829);
+ 
+  }
+  
+  
