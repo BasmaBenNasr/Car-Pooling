@@ -29,6 +29,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TestComponent } from './components/test/test.component';
+import { RateComponent } from './components/rate/rate.component';
 
 
 
@@ -52,6 +53,7 @@ import { TestComponent } from './components/test/test.component';
     AboutUsComponent,
     FooterComponent,
     TestComponent,
+    RateComponent,
    
   ],
   imports: [
