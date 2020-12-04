@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeedComponent } from '../app/components/feed/feed.component';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
+
 import {AuthPassengerGuard} from './components/_helper/auth.passenger.guard'
 import {AuthGuard} from './components/_helper/auth.guard'
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -23,13 +26,17 @@ import { DriverComponent } from './components/driver/driver.component';
 import { DriverProfileComponent } from './components/driver/driver-profile/driver-profile.component';
 import { FeedbackComponent } from './components/driver/feedback/feedback.component';
 import {DriverDetailComponent} from './components/passenger/driver-detail/driver-detail.component';
-
+import {CommonModule} from '@angular/common';
 //adding the ngx lib dropZone (cloudinary)
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PassengerDetailComponent } from './components/driver/passenger-detail/passenger-detail.component';
+//i added this as a landing page
 import { TestComponent } from './components/test/test.component';
-import { RateComponent } from './components/rate/rate.component';
+
+
+
 
 
 
@@ -53,19 +60,21 @@ import { RateComponent } from './components/rate/rate.component';
     AboutUsComponent,
     FooterComponent,
     TestComponent,
-    RateComponent,
-   
+    PassengerDetailComponent,
   ],
   imports: [
     BrowserModule,
+    NgxDropzoneModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    NgSelectModule,
+    NgOptionHighlightModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxDropzoneModule,
+    CommonModule,
   ],
   providers: [authInterceptorProviders, AuthPassengerGuard, AuthGuard],
   bootstrap: [AppComponent]
