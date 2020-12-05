@@ -41,6 +41,7 @@ import { TestComponent } from './components/test/test.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { TestComponent } from './components/test/test.component';
     FooterComponent,
     TestComponent,
     PassengerDetailComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ import { PassengerDetailComponent } from './components/driver/passenger-detail/p
 import { TestComponent } from './components/test/test.component';
 
 
+
 const routes: Routes = [
 {path: '', redirectTo: 'home', pathMatch: 'full'},
 {path:'login', component: LoginComponent},
