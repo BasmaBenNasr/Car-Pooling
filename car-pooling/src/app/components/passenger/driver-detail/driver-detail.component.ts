@@ -14,6 +14,7 @@ import * as moment from 'moment';
 export class DriverDetailComponent implements OnInit {
 Driver : any;
 feedBack:any;
+car:any;
 passenger : any;
   constructor(private driverService : DriverService, 
     private route: ActivatedRoute, 
@@ -30,9 +31,11 @@ this.passenger = this.tokenStorage.getUser()
 getDriver(){
   const id = +this.route.snapshot.paramMap.get('id');
   console.log(id)
-  this.driverService.getDriver(id).subscribe(driver =>  this.Driver = driver);
+  this.driverService.getDriver(id).subscribe(driver => {console.log(driver) 
+    this.Driver = driver});
 this.feedbackService.getFeedbackDriver(id).subscribe(feedback =>  this.feedBack= feedback);
-this.feedBack = this.feedBack.sort({createdAt: -1})
+this.driverService.getOneCar(id).subscribe((car:any) => { 
+  this.car= car})
 }
 
 goBack(): void {
