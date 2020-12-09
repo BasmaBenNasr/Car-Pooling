@@ -32,9 +32,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PassengerDetailComponent } from './components/driver/passenger-detail/passenger-detail.component';
-//i added this as a landing page
-import { TestComponent } from './components/test/test.component';
-
+import { LandingComponent } from './components/landing/landing.component';
 
 
 
@@ -60,8 +58,8 @@ import { TestComponent } from './components/test/test.component';
     DriverDetailComponent,
     AboutUsComponent,
     FooterComponent,
-    TestComponent,
     PassengerDetailComponent,
+    LandingComponent,
 
   ],
   imports: [
