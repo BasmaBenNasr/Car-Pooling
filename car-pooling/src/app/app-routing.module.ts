@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PassengerDetailComponent } from './components/driver/passenger-detail/passenger-detail.component';
 import { LandingComponent } from './components/landing/landing.component';
 
+
 const routes: Routes = [
 {path: '', redirectTo: 'home', pathMatch: 'full'},
 {path:'login', component: LoginComponent},
@@ -35,7 +36,6 @@ const routes: Routes = [
 {path: 'aboutUs', component: AboutUsComponent},
 {path: 'footer', component: FooterComponent},
 {path : 'landing', component: LandingComponent }
-
 ];
 
 @NgModule({
