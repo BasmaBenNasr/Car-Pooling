@@ -101,334 +101,355 @@ button{
   }
   
 
-  //title
-
-  @font-face {
-  font-family: Clip;
-  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+ 
+  /*******************/
+ 
+// Variables
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans',
+sans-serif;
+// clear-fix mixin
+@mixin cf {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
 
-body {
-  background-color: #141114;
-  background-image: linear-gradient(335deg, black 23px, transparent 23px),
-    linear-gradient(155deg, black 23px, transparent 23px),
-    linear-gradient(335deg, black 23px, transparent 23px),
-    linear-gradient(155deg, black 23px, transparent 23px);
-  background-size: 58px 58px;
-  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+* {
+  box-sizing: border-box;
 }
 
-.sign {
-  position: absolute;
+
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: $open-sans;
+  font-weight: 300;
+}
+
+
+
+// Base styles
+.card {
+  
+  width: 30%;
+  margin-top: 100px;
+  .menu-content {
+    @include cf;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      display: inline-block;
+    }
+    a {
+      color: $white;
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Open Sans';
+      transform: translate(-50%, 0);
+    }
+  }
+  .wrapper {
+    background-color: $white;
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+    &:hover {
+      .data {
+        transform: translateY(0);
+      }
+    }
+  }
+  .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .author {
+    font-size: 12px;
+  }
+  .title {
+    margin-top: 10px;
+  }
+  .text {
+    height: 70px;
+    margin: 0;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  input[type='checkbox']:checked + .menu-content {
+    transform: translateY(-60px);
+  }
+}
+
+
+// Second example styles
+.example-2 {
+  .wrapper {
+    background: url(https://www.speedcamera-alert.com.au/v/vspfiles/assets/images/UBER%20DRIVERS%20-%20Protect%20your%20License%20with%20TRAPTAP.jpg) center / cover no-repeat;
+    &:hover {
+      .menu-content {
+        span {
+          transform: translate(-50%, -10px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .header {
+    @include cf;
+    color: $white;
+    padding: 1em;
+    .date {
+      float: left;
+      font-size: 12px;
+    }
+  }
+  .menu-content {
+    float: right;
+    li {
+      margin: 0 5px;
+      position: relative;
+    }
+    span {
+      transition: all 0.3s;
+      opacity: 0;
+    }
+  }
+  .data {
+    color: $white;
+    transform: translateY(calc(70px + 4em));
+  }
+  .title {
+    a {
+      color: $white;
+    }
+  }
+  .button {
+    display: block;
+    width: 100px;
+    margin: 2em auto 1em;
+    text-align: center;
+    font-size: 12px;
+    color: $white;
+    line-height: 1;
+    position: relative;
+    font-weight: 700;
+    &::after {
+      content: '\2192';
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::after {
+        transform: translate(5px, -50%);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.example-3 {
+  .wrapper {
+    background: url(https://image.freepik.com/free-photo/man-car-trip_23-2147935781.jpg) center / cover no-repeat;
+    &:hover {
+      .menu-content {
+        span {
+          transform: translate(-50%, -10px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .header {
+    @include cf;
+    color: $white;
+    padding: 1em;
+    .date {
+      float: left;
+      font-size: 12px;
+    }
+  }
+  .menu-content {
+    float: right;
+    li {
+      margin: 0 5px;
+      position: relative;
+    }
+    span {
+      transition: all 0.3s;
+      opacity: 0;
+    }
+  }
+  .data {
+    color: $white;
+    transform: translateY(calc(70px + 4em));
+  }
+  .title {
+    a {
+      color: $white;
+    }
+  }
+  .button {
+    display: block;
+    width: 100px;
+    margin: 2em auto 1em;
+    text-align: center;
+    font-size: 12px;
+    color: $white;
+    line-height: 1;
+    position: relative;
+    font-weight: 700;
+    &::after {
+      content: '\2192';
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::after {
+        transform: translate(5px, -50%);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+
+html {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 50%;
-  background-image: radial-gradient(
-    ellipse 50% 35% at 50% 50%,
-    #6b1839,
-    transparent
-  );
-  transform: translate(-50%, -50%);
-  letter-spacing: 2;
-  left: 50%;
-  top: 50%;
-  font-family: "Clip";
-  text-transform: uppercase;
-  font-size: 6em;
-  color: #ffe6ff;
-  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #5aa9e9,
-    -0.2rem 0.1rem 1rem #5aa9e9, 0.2rem 0.1rem 1rem #5aa9e9,
-    0 -0.5rem 2rem #3a24ff, 0 0.5rem 3rem #3a24ff;
-  animation: shine 2s forwards, flicker 3s infinite;
+  height: 100%;
+  background: aliceblue;
 }
 
-@keyframes blink {
-  0%,
-  22%,
-  36%,
-  75% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #5aa9e9,
-      -0.2rem 0.1rem 1rem #5aa9e9, 0.2rem 0.1rem 1rem #5aa9e9,
-      0 -0.5rem 2rem #3a24ff, 0 0.5rem 3rem #3a24ff;
-  }
-  28%,
-  33% {
-    color: #5aa9e9;
-    text-shadow: none;
-  }
-  82%,
-  97% {
-    color: #3a24ff;
-    text-shadow: none;
-  }
+.slideshow {
+  position: relative;
+  display: block;
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.flicker {
-  animation: shine 2s forwards, blink 3s 2s infinite;
+.slideshow > * {
+  position: absolute;
+  display: block;
+  top: 0; right: 0; bottom: 0; left: 0;
+  padding: 0;
+  background-color: #000;
+  transform: translateX(100%);
+  animation: anim 20s linear infinite;
 }
 
-.fast-flicker {
-  animation: shine 2s forwards, blink 10s 1s infinite;
+@keyframes anim {
+  10%, 20% { transform: translateX(0); }
+  30% { transform: translateX(-100%); }
+  31%, 100% { transform: translateX(100%); z-index: -1 }
 }
 
-@keyframes shine {
-  0% {
-    color: #6b1839;
-    text-shadow: none;
-  }
-  100% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #5aa9e9,
-      -0.2rem 0.1rem 1rem #5aa9e9, 0.2rem 0.1rem 1rem #5aa9e9,
-      0 -0.5rem 2rem #3a24ff, 0 0.5rem 3rem #3a24ff;
-  }
+.slideshow > :nth-child(2) {
+  animation-delay: 4s;
+}
+.slideshow > :nth-child(3) {
+  animation-delay: 8s;
+}
+.slideshow > :nth-child(4) {
+  animation-delay: 12s;
+}
+.slideshow > :nth-child(5) {
+  animation-delay: 16s;
 }
 
-@keyframes flicker {
-  from {
-    opacity: 1;
-  }
 
-  4% {
-    opacity: 0.9;
-  }
 
-  6% {
-    opacity: 0.85;
-  }
 
-  8% {
-    opacity: 0.95;
-  }
 
-  10% {
-    opacity: 0.9;
-  }
+.wrappers {
+  margin: 5em auto;
+  max-width: 1000px;
 
-  11% {
-    opacity: 0.922;
-  }
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
+}
 
-  12% {
-    opacity: 0.9;
-  }
+.header {
+  padding: 30px 30px 0;
+  text-align: center;
 
-  14% {
-    opacity: 0.95;
+  &__title {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    font-weight: 500;
+    line-height: 1.1;
   }
-
-  16% {
-    opacity: 0.98;
-  }
-
-  17% {
-    opacity: 0.9;
-  }
-
-  19% {
-    opacity: 0.93;
-  }
-
-  20% {
-    opacity: 0.99;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  26% {
-    opacity: 0.94;
-  }
-
-  28% {
-    opacity: 0.98;
-  }
-
-  37% {
-    opacity: 0.93;
-  }
-
-  38% {
-    opacity: 0.5;
-  }
-
-  39% {
-    opacity: 0.96;
-  }
-
-  42% {
-    opacity: 1;
-  }
-
-  44% {
-    opacity: 0.97;
-  }
-
-  46% {
-    opacity: 0.94;
-  }
-
-  56% {
-    opacity: 0.9;
-  }
-
-  58% {
-    opacity: 0.9;
-  }
-
-  60% {
-    opacity: 0.99;
-  }
-
-  68% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 0.9;
-  }
-
-  72% {
-    opacity: 0.95;
-  }
-
-  93% {
-    opacity: 0.93;
-  }
-
-  95% {
-    opacity: 0.95;
-  }
-
-  97% {
-    opacity: 0.93;
-  }
-
-  to {
-    opacity: 1;
+  &__subtitle {
+    margin: 0;
+    font-size: 1.5em;
+    // color: $gray;
+    font-family: 'Yesteryear', cursive;
+    font-weight: 500;
+    line-height: 1.1;
   }
 }
 
-  
+//Grid Container
+.cards {
+  padding: 15px;
+  display: flex;
+  flex-flow: row wrap;
+}
 
 
-// Love dynamically typed text? You're gonna love this
-// Edit these strings to see them typed on the screen:
-$strings: (
-  "Are you a driver?"
-  "Submit the free spaces for your car on Carpooling app."
-  "Are you a passenger?"
-  "Use Carpooling app to find drivers on your route."
-	
-);
-
-// now for some timing (in seconds)
-$durCharFwd: 0.10; // character typed
-$durFullGap: 2.00; // time between typed/delete
-$durCharBwd: 0.08; // character deleted
-$durDoneGap: 1.00; // time between strings
-
-// initializing some variables and functions ✊🏼
-$charCount: 0; $durTotal: 0;
-@each $string in $strings {
-	$charCount: $charCount + str-length($string);
-	$durTotal: $durTotal
-		+ (str-length($string) * ($durCharFwd + $durCharBwd))
-		+ $durFullGap + $durDoneGap;
-}
-@function percent($string, $letter, $modifier) {
-	$stringsPast: $string - 1; $time: 0;
-	@while $stringsPast > 0 {
-		$time: $time
-			+ (($durCharFwd + $durCharBwd) * (str-length(nth($strings, $stringsPast))))
-			+ $durFullGap + $durDoneGap;
-		$stringsPast: $stringsPast - 1;
-	}
-	@if $letter <= str-length(nth($strings, $string)) {
-		$time: $time
-			+ ($durCharFwd * ($letter - 1));
-	} @else {
-		$time: $time
-			+ ($durCharFwd * str-length(nth($strings, $string)))
-			+ $durFullGap
-			+ ($durCharBwd * ($letter - str-length(nth($strings, $string))));
-	}
-	@return ($time / $durTotal * 100 + $modifier) + "%";
-}
-$currentPercentage: 0;
-// now THIS is where the magic happens... ✨
-@keyframes typed {
-	@for $i from 1 through length($strings) {
-		// @for $j from 1 through (str-length(nth($strings, $i)) * 2 - 1) {
-		@for $j from 1 through (str-length(nth($strings, $i)) * 2) {
-			/* string #{$i}, char #{$j} */
-			@if $j < str-length(nth($strings, $i)) * 2 { // not last character deleted
-				#{percent($i, $j, 0)}, #{percent($i, $j+1, -0.001)} {
-					@if $j <= str-length(nth($strings, $i)) {
-						content: quote(#{str_slice(nth($strings, $i), 1, $j)});
-					} @else {
-						content: quote(#{str_slice(nth($strings, $i), 1, str-length(nth($strings, $i)) - ($j - str-length(nth($strings, $i))))});
-					}
-				}
-			} @else {
-				@if $i < length($strings) { // not last string
-					#{percent($i, $j, 0)}, #{percent($i+1, 1, -0.001)} {
-						content: "​"; // zero-width space to retain element height
-					}
-				} @else { // last string
-					#{percent($i, $j, 0)}, 100% {
-						content: "​"; // zero-width space to retain element height
-					}
-				}
-			}
-		}
-	}
-}
-@keyframes beam-blink {
-	75% { border-color: transparent; }
-}
-* { backface-visibility: hidden; }
-.text {
-	// display: flex;
-	// align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vw);
-	font-family: 'VT323', monospace, sans-serif;
-	color: rgb(171, 229, 233); // hacker green
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	&::after {
-		content: "​"; // zero-width space to retain element height
-		position: relative;
-		top: -13px;
-		@media (max-width: 575px) { top: -33px; }
-		display: inline-block;
-		padding-right: 3px;
-		padding-right: calc(3px + 0.1vw);
-		border-right: 5px solid rgba(rgb(51, 255, 228), 0.75);
-		border-right: calc(1.1vw + 4px) solid rgba(rgb(51, 255, 238), 0.75);
-		text-shadow: 0 0 5px rgba(193, 236, 233, 0.75);
-		white-space: nowrap;
-		animation: typed #{$durTotal + "s"} linear 1s infinite, beam-blink 1s infinite;
-	}
-	&::before { 
-		@media (max-width: 575px) {
-			content: "#{length($strings)} strings \A #{$charCount} chars \A #{$durTotal}s duration";
-		}
-		display: block;
-		position: absolute;
-		margin-top: 200px;
-		width: 100%;
-		padding: 3px 0;
-		background: #00f; // aquaman blue
-		color: #fff; // Brandon-McConnell white
-		text-align: center;
-		font-size: 18px;
-		letter-spacing: 0.2px;
-		white-space: pre-wrap;
-	}
+ 
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: transparent;
+    border-radius: 0.25rem;
 }
